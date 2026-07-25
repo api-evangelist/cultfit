@@ -1,7 +1,13 @@
 aid: cultfit
 name: Cult.fit
-description: 'Cult.fit is a company surfaced as a portfolio company of accel and added to the API Evangelist
-  network as a stub for enrichment. Sector: consumer. This profile is a lead awaiting the enrichment pipeline.'
+description: 'Cult.fit (Curefit / cure.fit, operated by Diverse Retails Private Limited) is an Indian
+  health and fitness company offering a connected consumer experience across group fitness classes,
+  gyms, at-home workouts, mental well-being and meditation, healthy food, and diagnostics. Its
+  flagship products include CultPass gym and class memberships, sport and fitness centers, live and
+  on-demand digital workouts, and the cult.fit and cure.fit mobile and web apps. Backed by Accel and
+  other investors, the company operates a large consumer platform but does not publish a public
+  developer API program; this API Evangelist profile captures its company identity, corporate web
+  properties, and engineering surface (the curefit GitHub organization and engineering blog).'
 url: https://raw.githubusercontent.com/api-evangelist/cultfit/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,12 +15,30 @@ x-backed-by:
 - accel
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
+image: https://static.cure.fit/assets/images/social/social-share.jpg
 tags:
 - Company
 - Consumer
+- Fitness
+- Health
+- Wellness
+- Meditation
+- Mobile
+- India
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -22,5 +46,26 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: VulnerabilityDisclosure
+  url: security/cultfit-vulnerability-disclosure.yml
+- type: Security
+  url: https://www.cult.fit/security
 - type: Website
-  url: http://www.cure.fit
+  url: https://www.cult.fit
+- type: Blog
+  url: https://blog.cult.fit
+- type: GitHubOrganization
+  url: https://github.com/curefit
+- type: Support
+  url: https://www.cult.fit/contactUs
+- type: TermsOfService
+  url: https://static.cult.fit/terms_cult.html
+- type: PrivacyPolicy
+  url: https://static.cult.fit/privacy__cult.html
+- type: DomainSecurity
+  url: security/cultfit-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
