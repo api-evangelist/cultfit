@@ -1,0 +1,23 @@
+generated: '2026-08-10'
+method: searched
+source: https://www.cult.fit/robots.txt
+limit_count: 0
+rate_limits: []
+headers: []
+note: >-
+  No published rate limits, because Cult.fit publishes no public API and therefore
+  no API documentation in which to publish them. No X-RateLimit-*, RateLimit-*, or
+  Retry-After headers were observed on any anonymous response from the probed
+  hosts. The private app backend at api.cure.fit answers anonymously with 404 and
+  a large Access-Control-Allow-Headers list but exposes no rate-limit signaling to
+  an unauthenticated caller. The only published throttling-adjacent statement
+  Cult.fit makes to machines is robots.txt, which disallows /api/ outright.
+evidence:
+- url: https://api.cure.fit/
+  status: 404
+  observed_rate_limit_headers: none
+- url: https://www.cult.fit/robots.txt
+  status: 200
+  note: 'Disallow: /api/'
+x-evidence:
+  fetched: '2026-08-10'

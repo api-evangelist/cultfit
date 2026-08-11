@@ -1,0 +1,27 @@
+generated: '2026-08-10'
+method: searched
+source: https://www.cult.fit
+plan_count: 0
+plans: []
+note: >-
+  Cult.fit publishes no API plans, because it publishes no public API. It does
+  sell consumer memberships (CultPass and related gym/class passes), but those
+  prices are rendered inside the React app after a city and center are selected —
+  there is no stable public pricing URL to cite, and consumer membership tiers are
+  not API plans and are deliberately not recorded here as such. No developer
+  pricing page, no usage-based tiers, no quotas, and no "contact sales" API
+  enterprise track exist on any Cult.fit property.
+evidence:
+- url: https://www.cult.fit/pricing
+  status: 404
+- url: https://www.cult.fit/membership
+  status: 404
+- url: https://www.cult.fit/cult-pass
+  status: 404
+- url: https://www.cult.fit/sitemap.xml
+  status: 200
+  note: >-
+    Sitemap index contains only center-pages, listing-pages and fitness sitemaps —
+    no developer, pricing, or API section.
+x-evidence:
+  fetched: '2026-08-10'

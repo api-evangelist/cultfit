@@ -1,0 +1,88 @@
+generated: '2026-08-10'
+method: probed
+source: live HTTPS probes of every Cult.fit / Cure.fit / Cultsport host
+note: >-
+  Every /.well-known/ path probed returned 404 on every host. No WellKnown or
+  SecurityTxt pointer is emitted in apis.yml, because none of these paths served
+  a real document. The single 200 observed (https://www.cultsport.com/llms.txt)
+  returned the Cultsport single-page-app HTML shell, not an llms.txt document,
+  and is recorded below as a miss.
+hosts:
+- host: https://www.cult.fit
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://cult.fit
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://api.cure.fit
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://www.cure.fit
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://www.cultsport.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+other_probes:
+- url: https://www.cultsport.com/llms.txt
+  status: 200
+  result: miss
+  reason: >-
+    Body is the Cultsport React single-page-app HTML shell (<!DOCTYPE html> with
+    static.cultsport.com script preloads), not an llms.txt document. A 200 that
+    returns an SPA shell is not a served document.
+- url: https://www.cult.fit/robots.txt
+  status: 200
+  result: hit
+  note: >-
+    Disallows /api/ — the only public acknowledgement of an API surface on the
+    Cult.fit web property, and it is an instruction not to crawl it.
+- url: https://www.cult.fit/sitemap.xml
+  status: 200
+  result: hit
+  note: Sitemap index (center-pages, listing-pages, fitness). Consumer content only.
+x-evidence:
+  fetched: '2026-08-10'
+  paths_probed: 27
+  documents_found: 0

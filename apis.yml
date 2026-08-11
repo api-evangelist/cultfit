@@ -28,7 +28,7 @@ accessModel:
   method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-18'
+modified: '2026-08-10'
 image: https://static.cure.fit/assets/images/social/social-share.jpg
 tags:
 - Company
@@ -64,8 +64,41 @@ common:
   url: https://static.cult.fit/privacy__cult.html
 - type: DomainSecurity
   url: security/cultfit-domain-security.yml
+- type: Login
+  url: https://www.cult.fit/login
+- type: Packages
+  url: packages/cultfit-packages.yml
+- type: LLMsTxt
+  url: llms/cultfit-llms.txt
+- type: Plans
+  url: plans/cultfit-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/cultfit-rate-limits.yml
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
+  date: '2026-08-10'
+  status: minimal
+  artifacts_added: 5
   pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
+  note: >-
+    Contract discovery run against every Cult.fit / Cure.fit / Cultsport host —
+    no OpenAPI, GraphQL, AsyncAPI, MCP or A2A surface exists. Prior backfill note:
+    backfilled from .gitignore signal + verified work evidence.
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Cult.fit ships only end-user apps — every spec path (/openapi.json,
+    /swagger.json, /api-docs) 404s on www.cult.fit, api.cure.fit and
+    www.cultsport.com, there is no developer.cult.fit or docs.cult.fit host at
+    all (DNS does not resolve), and the private app backend at api.cure.fit is
+    explicitly walled off by robots.txt "Disallow: /api/".
+  evidence:
+  - url: https://api.cure.fit/openapi.json
+    status: 404
+  - url: https://www.cult.fit/robots.txt
+    status: 200
+  - url: https://www.cult.fit/.well-known/agent-card.json
+    status: 404
+  - url: https://www.cultsport.com/llms.txt
+    status: 200
+  checked: '2026-08-10'

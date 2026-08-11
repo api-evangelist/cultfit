@@ -1,0 +1,61 @@
+generated: '2026-08-10'
+method: searched
+source: >-
+  registry.npmjs.org, pypi.org, and the github.com/curefit organization (138
+  public repositories reviewed)
+summary: >-
+  Cult.fit publishes no API client SDK in any public package registry, because it
+  publishes no public API. One first-party package was found on npm — react-crux,
+  a client-side React CRUD/admin-dashboard UI library maintained in the curefit
+  GitHub organization. It is genuine first-party open source but it is NOT a
+  client library for a Cult.fit API, so no SDKs pointer is emitted in apis.yml.
+  The rest of the curefit GitHub organization is forks of third-party Flutter and
+  React Native plugins, plus internal-tooling repos with no registry release.
+packages:
+- language: javascript
+  registry: npm
+  name: react-crux
+  url: https://www.npmjs.com/package/react-crux
+  install: npm install react-crux
+  official: true
+  official_evidence: >-
+    package.json repository is git+https://github.com/curefit/react-crux.git and
+    homepage is https://github.com/curefit/react-crux#readme
+  source_code: https://github.com/curefit/react-crux
+  version: 0.32.0
+  published: '2024-05-21'
+  api_client: false
+  note: >-
+    A React library for generating admin/CRUD dashboards over server-side
+    entities. Internal engineering tooling that Cult.fit open-sourced — not a
+    client for a Cult.fit API. Last published 2024-05-21, more than two years
+    before this probe.
+rejected:
+- registry: npm
+  name: curefit
+  url: https://www.npmjs.com/package/curefit
+  version: 1.1.7
+  published: '2021-10-15'
+  official: false
+  reason: >-
+    Name collision only. No repository field, description is "It contains all
+    required packages.", and the sole maintainer is an individual account with no
+    link to the curefit GitHub organization or cult.fit. Not first-party.
+registries_probed:
+- registry: npm
+  query: scope:curefit
+  result: 0 packages
+- registry: npm
+  query: curefit
+  result: 2 packages (1 first-party, 1 rejected)
+- registry: pypi
+  query: curefit
+  status: 404
+- registry: pypi
+  query: cultfit
+  status: 404
+x-evidence:
+  fetched: '2026-08-10'
+  npm_react_crux: https://registry.npmjs.org/react-crux
+  github_org: https://github.com/curefit
+  api_sdks_found: 0
